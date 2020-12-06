@@ -1,0 +1,31 @@
+.Grid {
+  display: grid;
+  padding: 10px;
+  grid-template-areas:
+    " nav employeers employeers employeers ."
+    ".  requests calendar base ."
+    ".  waterfall-news waterfall-news waterfall-news notificate";
+  grid-template-columns: 1fr;
+ 
+grid-gap:1%
+}
+
+#nav {
+  grid-area: nav;
+  justify-self: center;
+}
+#employeers {
+  grid-area: employeers;
+}
+#calendar {
+  grid-area: calendar;
+}
+#base {
+  grid-area: base;
+}
+#requests {
+  grid-area: requests;
+}
+#waterfall-news {
+  grid-area: waterfall-news;
+}

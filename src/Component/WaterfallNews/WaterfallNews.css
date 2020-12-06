@@ -1,0 +1,70 @@
+.waterfall {
+  width: 660px;
+  height: auto;
+}
+.news {
+  text-align: left;
+  position: relative;
+  margin-top: 22px;
+}
+.company {
+  border-top: 1px solid red;
+  border-bottom: none;
+  background: #fef9ec;
+  padding: 20px;
+  line-height: 40px;
+}
+.employeer {
+  border: 1px solid #e5e5e5;
+  line-height: 40px;
+  padding: 20px;
+}
+.employeer .tag{
+   top:100%;
+   border-color: #DDDDDD;
+}
+
+.tag {
+  background: #ffffff;
+  padding: 5px 23px;
+  border: 1px solid #ff4c00;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #ff4c00;
+  font-size: 12px;
+  line-height: 14px;
+  position: absolute;
+  top: -6%;
+  left: 5%;
+}
+.company-avatar {
+  float: left;
+  margin-right: 10px;
+}
+.news .text {
+  margin: 0 0 0 50px;
+}
+.company .text{
+    background: rgba(242, 201, 76, 0.2);
+border-radius: 6px;
+width: 70%;
+line-height: 16.5px;
+padding: 10px;
+}
+.updates{
+    padding:20px 10px;
+    text-align: left;
+}
+.button-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 32px;
+}
+.btn{
+    background: #F8F8F8;
+border: 1px solid #DDDDDD;
+
+border-radius: 50px;
+margin-right: 10px;
+}
