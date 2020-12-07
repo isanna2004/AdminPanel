@@ -1,0 +1,15 @@
+.notification{
+    margin: 0;
+    padding: 10px;
+}
+.notification-content .text{
+    text-align: center;
+    font-size: 14px;
+    
+}
+ .title{
+   border-top: 1px solid #e5e5e5;
+} 
+.notification-content{
+    height: 85%;
+}

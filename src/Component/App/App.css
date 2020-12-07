@@ -3,8 +3,8 @@
   padding: 10px;
   grid-template-areas:
     " nav employeers employeers employeers ."
-    ".  requests calendar base ."
-    ".  waterfall-news waterfall-news waterfall-news notificate";
+    "nav requests calendar base ."
+    ".  waterfall-news waterfall-news notificate notificate";
   grid-template-columns: 1fr;
  
 grid-gap:1%
@@ -29,3 +29,6 @@ grid-gap:1%
 #waterfall-news {
   grid-area: waterfall-news;
 }
+ #notificate{
+   grid-area: notificate;
+ }

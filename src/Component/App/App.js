@@ -20,8 +20,8 @@ function App() {
         <Requests id="requests" />
         <Calendar id="calendar" />
         <Base id="base" />
-        <WaterfallNews id="waterfall-news"/>
-        <Notificate />
+        <WaterfallNews id="waterfall-news" />
+        <Notificate id="notificate" />
       </div>
     </div>
   );

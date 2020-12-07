@@ -1,0 +1,35 @@
+nav li {
+  list-style-type: none;
+  line-height: 17px;
+  margin-bottom: 17px;
+  padding: 6px 7px;
+   text-align: left;
+   font-weight: 500;
+font-size: 14px;
+}
+nav li:hover {
+ 
+  height: 36px;
+  background: #ff4c00;
+  border-radius: 8px;
+  color: white;
+}
+nav ul{
+    display: none;
+    transition:2s ease-in-out .5s;
+}
+.active{
+    display: block;
+    
+}
+nav .title{
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+
+}
+nav{
+    text-align: center;
+}
