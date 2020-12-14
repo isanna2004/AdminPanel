@@ -13,9 +13,9 @@ export default class Employeers extends React.Component {
 
   render() {
     const { employeers } = this.state;
-    const firstSlide = employeers.slice(0, Math.floor(employeers.length / 2));
-    const secondSlide = employeers.slice(Math.floor(employeers.length / 2));
-    const absent = employeers.filter((elem) => elem.status === "активен");
+   const firstSlide = employeers.length>= 9 ? employeers.slice(0, Math.floor(employeers.length / 2)): employeers
+    const secondSlide = employeers.length>= 9 ? employeers.slice(Math.floor(employeers.length / 2)): []
+    const active = employeers.filter((elem) => elem.status === "активен");
  const settings = {  
    slidesToShow: 1,
    slidesToScroll: 1,
@@ -27,7 +27,7 @@ export default class Employeers extends React.Component {
       <section className="employeers" id={this.props.id}>
         <h3 className="title">
           Отсутствующие сотрудники{" "}
-          <span>{employeers.length - absent.length}</span>
+          <span>{employeers.length - active.length}</span>
         </h3>
         <div className="employeers-header">
           <ul className="holders">
@@ -37,20 +37,45 @@ export default class Employeers extends React.Component {
           </ul>
         </div>
         <div className="employeers-name">
-          <p className="name-count">
+          <p
+            className="name-count"
+            onClick={() =>
+              this.setState({
+                employeers: data
+              })
+            }
+          >
             <b className="count">Все</b>{" "}
             <span>{employeers.length} сотрудников</span>
           </p>
-          <p className="name-count">
+          <p
+            className="name-count"
+            onClick={() =>
+              this.setState({
+                employeers: employeers.filter(
+                  (elem) => elem.status === "в отпуске"
+                ),
+              })
+            }
+          >
             <b className="count" style={{ borderLeftColor: " #2F80ED" }}>
               В отпуске
             </b>
             <span>
-              {employeers.filter((elem) => elem.status === "в отпуске").length}
+              {employeers.filter((elem) => elem.status === "в отпуске").length }
               сотрудников
             </span>
           </p>
-          <p className="name-count">
+          <p
+            className="name-count"
+            onClick={() =>
+              this.setState({
+                employeers: employeers.filter(
+                  (elem) => elem.status === "отгул"
+                ),
+              })
+            }
+          >
             <b className="count" style={{ borderLeftColor: "#F2994A" }}>
               Отгул
             </b>{" "}
@@ -59,12 +84,22 @@ export default class Employeers extends React.Component {
               сотрудников
             </span>
           </p>
-          <p className="name-count">
+          <p
+            className="name-count"
+            onClick={() =>
+              this.setState({
+                employeers: employeers.filter(
+                  (elem) => elem.status === "больничный"
+                ),
+              })
+            }
+          >
             <b className="count" style={{ borderLeftColor: "#FF0F00" }}>
               Больничный
             </b>{" "}
             <span>
-              {employeers.filter((elem) => elem.status === "больничный").length}{" "}
+              {employeers.filter((elem) => elem.status === "больничный")
+                .length}{" "}
               сотрудника
             </span>
           </p>
@@ -79,7 +114,29 @@ export default class Employeers extends React.Component {
                       <img className="avatar" src={Ava} />
                       <h5 className="employee-name">{employeer.name}</h5>
                       <p className="employee-position">{employeer.position}</p>
-                      <p className="date">{employeer.date}</p>
+                      <p
+                        className="date"
+                        style={{
+                          backgroundColor:
+                            employeer.status === "больничный"
+                              ? "rgba(255,15,0,0.1)"
+                              : employeer.status === "отгул"
+                              ? "rgba(242, 153, 74, 0.1)"
+                              : employeer.status === "в отпуске"
+                              ? "rgba(45, 156, 219, 0.1)"
+                              : "rgba(39, 174, 96, 0.1)",
+                          color:
+                            employeer.status === "больничный"
+                              ? "rgba(255,15,0,1)"
+                              : employeer.status === "отгул"
+                              ? "rgba(242, 153, 74, 1)"
+                              : employeer.status === "в отпуске"
+                              ? "rgba(45, 156, 219,1)"
+                              : "rgba(39, 174, 96,1)",
+                        }}
+                      >
+                        {employeer.date}
+                      </p>
                     </div>
                   );
                 })}{" "}
@@ -93,7 +150,29 @@ export default class Employeers extends React.Component {
                       <img className="avatar" src={Ava} />
                       <h5 className="employee-name">{employeer.name}</h5>
                       <p className="employee-position">{employeer.position}</p>
-                      <p className="date">{employeer.date}</p>
+                      <p
+                        className="date"
+                        style={{
+                          backgroundColor:
+                            employeer.status === "больничный"
+                              ? "rgba(255,15,0,0.1)"
+                              : employeer.status === "отгул"
+                              ? "rgba(242, 153, 74, 0.1)"
+                              : employeer.status === "в отпуске"
+                              ? "rgba(45, 156, 219, 0.1)"
+                              : "rgba(39, 174, 96, 0.1)",
+                          color:
+                            employeer.status === "больничный"
+                              ? "rgba(255,15,0,1)"
+                              : employeer.status === "отгул"
+                              ? "rgba(242, 153, 74, 1)"
+                              : employeer.status === "в отпуске"
+                              ? "rgba(45, 156, 219,1)"
+                              : "rgba(39, 174, 96,1)",
+                        }}
+                      >
+                        {employeer.date}
+                      </p>
                     </div>
                   );
                 })}{" "}
