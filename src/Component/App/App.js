@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "../Header/Header";
 import Navigation from "../Navigation/Navigation";
@@ -9,6 +9,7 @@ import Requests from "../Requests/Requests";
 import Calendar from "../Calendar/Calendar";
 import WaterfallNews from "../WaterfallNews/WaterfallNews";
 function App() {
+const [setVisible]=useState(false)
   return (
     <div className="App">
       <header className="App-header my-3">

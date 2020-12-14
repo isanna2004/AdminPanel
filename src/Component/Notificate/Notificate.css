@@ -1,9 +1,7 @@
-.notification{
-    margin: 0;
-    padding: 10px;
-}
+
 .notification-content .text{
-    text-align: center;
+   text-align: left;
+    padding:0 20px;
     font-size: 14px;
     
 }
@@ -12,4 +10,7 @@
 } 
 .notification-content{
     height: 85%;
+}
+.notification-content .avatar{
+float: unset;
 }

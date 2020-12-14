@@ -20,19 +20,7 @@
   background-color: #e5e5e5;
   color: #1d1c1d;
 }
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffff;
-  padding: 40px 0;
-  font-size: 14px;
-}
 
-.arrows {
-  color: #e5e5e5;
-  margin: 0 10px;
-}
 .counter {
   background-color: #ffeee6;
   color: #ff4c00;
@@ -44,13 +32,27 @@
 
 .title .counter {
   background-color: #ff4c00;
-margin-left:10px ;
+  margin-left: 10px;
   color: #ffff;
 }
-.dots .title {
-  border-top: 1px solid #e5e5e5;
+
+.content .text {
+  height: 220px;
+  padding: 50px 20px;
+
 }
-.dots span{
-  color:red;
-  font-size: 20px;
+
+.requests .slick-prev {
+  left: 1%;
+  z-index: 10;
+}
+.requests .slick-next {
+  right: 1%;
+}
+.slick-dots {
+  bottom: 15px;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: #ff4c00;
 }

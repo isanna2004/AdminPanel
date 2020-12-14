@@ -4,26 +4,51 @@ import Ava from "../../images/ava.png";
 export default class Notificate extends React.Component {
   render() {
     return (
-      <div className="requests" id={this.props.id}>
+      <div className="requests notificate" id={this.props.id}>
         <h4 className="title">
-          Уведомления <span className="counter"> 4</span>
+          Уведомления <span className="counter"> 1</span>
         </h4>
         <div className="notification-content">
-          <p className="employeer notification">
-            <img src={Ava} alt="employeer" className="company-avatar" />
-            <b>Владимиров Владимир</b> <data>9:20</data>
-          </p>
-          <p className="text">
-            Подготовить обновлённую презентацию разработанного продукта
-          </p>{" "}
-          <p className="employeer notification">
-            <img src={Ava} alt="employeer" className="company-avatar" />
-            <b>Владимиров Владимир</b> <data>9:20</data>
-          </p>
-          <p className="text">
-            Презентация IT-отдела, Улучшение мобильной платёжной системы.
-          </p>{" "}
-        </div>
+          <div className="text">
+            {" "}
+            <p>
+              {" "}
+              <img className="avatar" src={Ava} />
+              <b>Владимиров Владимир </b> 9:22
+            </p>
+            <span
+              className="counter"
+              style={{
+        
+                color: " #2F80ED",
+                backgroundColor: " rgba(45, 156, 219, 0.1)",
+              }}
+            >
+              назначает вам задачу
+            </span>
+            <p>Подготовить обновлённую презентацию разработанного продукта</p>
+          </div>
+          <hr />
+
+          <div className="text">
+            {" "}
+            <p>
+              {" "}
+              <img className="avatar" src={Ava} />
+              <b>Владимиров Владимир </b> 9:22
+            </p>
+            <span
+              className="counter"
+              style={{
+                color: " #2F80ED",
+                backgroundColor: " rgba(45, 156, 219, 0.1)",
+              }}
+            >
+              создает событие
+            </span>
+            <p>Презентация IT-отдела, Улучшение мобильной платёжной системы.</p>
+          </div>
+        </div>{" "}
         <h4 className="title">Уведомления →</h4>
       </div>
     );
