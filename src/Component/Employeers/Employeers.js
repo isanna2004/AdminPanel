@@ -13,16 +13,22 @@ export default class Employeers extends React.Component {
 
   render() {
     const { employeers } = this.state;
-   const firstSlide = employeers.length>= 9 ? employeers.slice(0, Math.floor(employeers.length / 2)): employeers
-    const secondSlide = employeers.length>= 9 ? employeers.slice(Math.floor(employeers.length / 2)): []
+    const firstSlide =
+      employeers.length >= 9
+        ? employeers.slice(0, Math.floor(employeers.length / 2))
+        : employeers;
+    const secondSlide =
+      employeers.length >= 9
+        ? employeers.slice(Math.floor(employeers.length / 2))
+        : [];
     const active = employeers.filter((elem) => elem.status === "активен");
- const settings = {  
-   slidesToShow: 1,
-   slidesToScroll: 1,
-   nextArrow: <ArrowForwardIos />,
-    nextArrowDisabled:<ArrowForwardIos />,
-   prevArrow: <ArrowBackIos />,
- };
+    const settings = {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      nextArrow: <ArrowForwardIos />,
+      nextArrowDisabled: <ArrowForwardIos />,
+      prevArrow: <ArrowBackIos />,
+    };
     return (
       <section className="employeers" id={this.props.id}>
         <h3 className="title">
@@ -41,20 +47,18 @@ export default class Employeers extends React.Component {
             className="name-count"
             onClick={() =>
               this.setState({
-                employeers: data
+                employeers: data,
               })
             }
           >
-            <b className="count">Все</b>{" "}
-            <span>{employeers.length} сотрудников</span>
+            <b className="count">Все</b> <span>{data.length} сотрудников</span>
           </p>
+
           <p
             className="name-count"
             onClick={() =>
               this.setState({
-                employeers: employeers.filter(
-                  (elem) => elem.status === "в отпуске"
-                ),
+                employeers: data.filter((elem) => elem.status === "в отпуске"),
               })
             }
           >
@@ -62,25 +66,23 @@ export default class Employeers extends React.Component {
               В отпуске
             </b>
             <span>
-              {employeers.filter((elem) => elem.status === "в отпуске").length }
+              {data.filter((elem) => elem.status === "в отпуске").length}
               сотрудников
             </span>
           </p>
           <p
             className="name-count"
-            onClick={() =>
+            onClick={() => {
               this.setState({
-                employeers: employeers.filter(
-                  (elem) => elem.status === "отгул"
-                ),
-              })
-            }
+                employeers: data.filter((elem) => elem.status === "отгул"),
+              });
+            }}
           >
             <b className="count" style={{ borderLeftColor: "#F2994A" }}>
               Отгул
             </b>{" "}
             <span>
-              {employeers.filter((elem) => elem.status === "отгул").length}{" "}
+              {data.filter((elem) => elem.status === "отгул").length}{" "}
               сотрудников
             </span>
           </p>
@@ -88,9 +90,7 @@ export default class Employeers extends React.Component {
             className="name-count"
             onClick={() =>
               this.setState({
-                employeers: employeers.filter(
-                  (elem) => elem.status === "больничный"
-                ),
+                employeers: data.filter((elem) => elem.status === "больничный"),
               })
             }
           >
@@ -98,8 +98,7 @@ export default class Employeers extends React.Component {
               Больничный
             </b>{" "}
             <span>
-              {employeers.filter((elem) => elem.status === "больничный")
-                .length}{" "}
+              {data.filter((elem) => elem.status === "больничный").length}{" "}
               сотрудника
             </span>
           </p>
@@ -110,7 +109,7 @@ export default class Employeers extends React.Component {
               <div className="employeer-list">
                 {firstSlide.map((employeer) => {
                   return (
-                    <div className="list-item" key={employeer.name}>
+                    <div className="list-item" key={employeer.id}>
                       <img className="avatar" src={Ava} />
                       <h5 className="employee-name">{employeer.name}</h5>
                       <p className="employee-position">{employeer.position}</p>
