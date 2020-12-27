@@ -1,14 +1,16 @@
 body {
-  background-color:#E5E5E5;
+  background-color: #e5e5e5;
   margin: 0;
-  font-family: 'Lato', sans-serif;
-  
+  font-family: "Lato", sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+p {
+  font-size: 14px;
 }

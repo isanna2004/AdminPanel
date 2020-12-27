@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0 320px;
+
+  span {
+    display: inline-block;
+    padding: 6px;
+    background-color: yellow;
+    border-radius: 50%;
+
+    .avatar {
+      float: unset;
+      margin: 0 auto;
+    }
+  }
+  .admin-name {
+    margin: 0;
+  }
+}
+.line {
+  width: 2px;
+  height: 56px;
+  margin: 0;
+  background-color: #dddddd;
+}
+
+.logo {
+  padding: 0;
+  width: 670px;
+}
+.info-window {
+  border: 1px solid #dddddd;
+  width: 172px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin: 0 20px;
+  color: #959595;
+}

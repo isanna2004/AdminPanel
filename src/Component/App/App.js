@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./App.scss";
 import Header from "../Header/Header";
 import Navigation from "../Navigation/Navigation";
+import Admin from "../Admin/Admin";
 import Notificate from "../Notificate/Notificate";
 import Employeers from "../Employeers/Employeers";
 import Base from "../Base/Base";
@@ -12,11 +13,12 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header my-3">
+      
         <Header />
-      </header>
+     <nav>  <Navigation />
+     <Admin/>
+     </nav>
       <div className="Grid">
-        <Navigation id="nav" />
         <Employeers id="employeers" />
         <Requests id="requests" />
         <Calendar id="calendar" />

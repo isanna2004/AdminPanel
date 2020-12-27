@@ -1,31 +1,28 @@
 import React from "react";
-import logo from "../../images/Logo.png";
-import avatar from "../../images/avatar.png";
-import "./Header.css";
+
+import { KeyboardArrowDown } from "@material-ui/icons";
+import "./Header.scss";
 export default class Header extends React.Component {
   render() {
     return (
-      <div className="header" >
-        <div className="grid-item">
-          <img src={logo} alt="fanki" className="logo" />
+      <header className="header">
+        <div className="logo">
+          <img src="/images/Logo.png" alt="fanki" className="logo-img" />
         </div>
-        <div className="grid-item">
-          <p className="info-window"> сообщений нет</p>
-        </div>
-        <div className="grid-item">
-          <p className="admin-name">
-            Александров Александр{" "}
-            <span className="avatar-circle">
-              {" "}
-              <img src={avatar} alt="avatar" className="avatar" />
-            </span>
-       
-          </p>   
-          <p className="admin-name">Frontend разработчик </p> 
+        <hr className="line" />
+        <p className="info-window"> сообщений нет</p>
+        <hr className="line" />
+        <p className="admin-name">
+          <b> Александров Александр</b>
+          <br />
+          Frontend разработчик{" "}
+        </p>
+        <span>
+          <img src="/images/avatar.png" alt="avatar" className="avatar" />
+        </span>
 
-        </div>  <div className="grid-item">   <span>˅</span></div>
-     
-      </div>
+        <KeyboardArrowDown />
+      </header>
     );
   }
 }

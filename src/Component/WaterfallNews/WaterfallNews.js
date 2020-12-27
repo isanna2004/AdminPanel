@@ -1,8 +1,6 @@
 import React from "react";
 import "./WaterfallNews.css";
-import Company from "../../images/company-avatar.png";
-import Ava from "../../images/ava.png";
-import updates from "../../images/updates.png";
+
 export default class WaterfallNews extends React.Component {
   render() {
     return (
@@ -15,7 +13,7 @@ export default class WaterfallNews extends React.Component {
           <div className="company">
             <p>
               {" "}
-              <img src={Company} alt="company" className="company-avatar" />
+              <img src="/images/company-avatar.png" alt="company" className="company-avatar" />
               <b> Company Sample Name </b> <data>Сегодня, 10:55</data>
             </p>
 
@@ -24,7 +22,7 @@ export default class WaterfallNews extends React.Component {
             </p>
           </div>
           <p className="employeer">
-            <img src={Ava} alt="employeer" className="company-avatar" />
+            <img src="/images/ava.png" alt="employeer" className="company-avatar" />
             <b>Калинина Оксана</b> <data>Сегодня, 9:20</data>
             <p className="text">
               Текст объявления, который написан от лица сотрудника.
@@ -33,7 +31,7 @@ export default class WaterfallNews extends React.Component {
           </p>{" "}
         </div>
         <div className="updates">
-          <img src={updates} alt="updates" />
+          <img src="/images/updates.png" alt="updates" />
           <h6>
             {" "}
             Здесь будет находится длинный очень длинный заголовокопубликованной

@@ -1,6 +1,6 @@
 import React from "react";
-import "./Base.css";
-import Book from "../../images/books.png";
+import "./Base.scss";
+
 import Slider from "../Slider/Slider";
 export default class Base extends React.Component {
   render() {
@@ -14,7 +14,11 @@ export default class Base extends React.Component {
             slideFirst={
               <div className="text">
                 <p>
-                  <img src={Book} alt="books" style={{ margin: "0 auto" }} />
+                  <img
+                    src="/images/books.png"
+                    alt="books"
+                    style={{ margin: "0 auto" }}
+                  />
                   <br />
                   Новых публикаций нет
                 </p>
@@ -23,7 +27,11 @@ export default class Base extends React.Component {
             slideSecond={
               <div className="text">
                 <p>
-                  <img src={Book} alt="books" style={{ margin: "0 auto" }} />
+                  <img
+                    src="/images/books.png"
+                    alt="books"
+                    style={{ margin: "0 auto" }}
+                  />
                   <br />
                   Новых публикаций нет
                 </p>

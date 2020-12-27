@@ -1,6 +1,6 @@
 import React from "react";
-import "./Employeers.css";
-import Ava from "../../images/ava.png";
+import "./Employeers.scss";
+
 import Slider from "react-slick";
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 
@@ -110,7 +110,7 @@ export default class Employeers extends React.Component {
                 {firstSlide.map((employeer) => {
                   return (
                     <div className="list-item" key={employeer.id}>
-                      <img className="avatar" src={Ava} />
+                      <img className="avatar" src="/images/ava.png" />
                       <h5 className="employee-name">{employeer.name}</h5>
                       <p className="employee-position">{employeer.position}</p>
                       <p
@@ -146,7 +146,7 @@ export default class Employeers extends React.Component {
                 {secondSlide.map((employeer) => {
                   return (
                     <div className="list-item" key={employeer.name}>
-                      <img className="avatar" src={Ava} />
+                      <img className="avatar" src="/images/ava.png" />
                       <h5 className="employee-name">{employeer.name}</h5>
                       <p className="employee-position">{employeer.position}</p>
                       <p

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Notificate.css";
-import Ava from "../../images/ava.png";
+
 export default class Notificate extends React.Component {
   render() {
     return (
@@ -13,13 +13,12 @@ export default class Notificate extends React.Component {
             {" "}
             <p>
               {" "}
-              <img className="avatar" src={Ava} />
+              <img className="avatar" src="/images/ava.png" />
               <b>Владимиров Владимир </b> 9:22
             </p>
             <span
               className="counter"
               style={{
-        
                 color: " #2F80ED",
                 backgroundColor: " rgba(45, 156, 219, 0.1)",
               }}
@@ -34,7 +33,7 @@ export default class Notificate extends React.Component {
             {" "}
             <p>
               {" "}
-              <img className="avatar" src={Ava} />
+              <img className="avatar" src="/images/ava.png" />
               <b>Владимиров Владимир </b> 9:22
             </p>
             <span

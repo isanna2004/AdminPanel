@@ -1,19 +1,19 @@
 .Grid {
   display: grid;
-  padding: 10px;
+  padding: 20px;
+
+  position: absolute;
+  left: 30%;
+
   grid-template-areas:
-    " nav employeers employeers employeers ."
-    "nav requests calendar base ."
-    ".  waterfall-news waterfall-news notificate notificate";
-  grid-template-columns: 1fr;
- 
+    "employeers employeers employeers"
+    "requests calendar base"
+    "waterfall-news waterfall-news  notificate";
+  grid-template-columns: repeat(3, 2fr);
 grid-gap:1%
 }
 
-#nav {
-  grid-area: nav;
 
-}
 #employeers {
   grid-area: employeers;
 }
