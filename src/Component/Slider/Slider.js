@@ -11,12 +11,12 @@ export default class Sliders extends React.Component {
       
     };
     return (
-      <div>
+      
         <Slider {...settings}>
           {this.props.slideFirst}
           {this.props.slideSecond}
         </Slider>
-      </div>
+     
     );
   }
 }

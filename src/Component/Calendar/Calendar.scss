@@ -1,3 +1,8 @@
+#calendar {
+  .text {
+    padding: 10px;
+  }
+}
 .calendar-date {
   text-align: center;
   margin: 0 auto;
@@ -11,12 +16,11 @@
   font-size: 16px;
   font-weight: 700;
   background: linear-gradient(to bottom, #de2f2f 50%, white 50%);
+}
+.month {
+  font-size: 11px;
 
-  .month {
-    font-size: 11px;
-
-    display: block;
-    margin: 0 auto;
-    color: white;
-  }
+  display: block;
+  margin: 0 auto;
+  color: white;
 }

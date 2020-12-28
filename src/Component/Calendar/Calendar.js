@@ -25,22 +25,28 @@ export default class Calendar extends React.Component {
       "Декабрь",
     ];
     const date = new Date();
-    console.log(date);
+    const { event, time, eventCount } = this.state;
     return (
       <div className="requests" id={this.props.id}>
         <h4 className="title">
-          Ближайшие события{" "}
-          <span className="counter"> {this.state.eventCount}</span>
+          Ближайшие события <span className="counter"> {eventCount}</span>
         </h4>{" "}
         <div className="content">
           <Slider
             slideFirst={
               <div className="text">
+                <div className="calendar-date">
+                  <span className="month">
+                    {month[date.getMonth()].slice(0, 3)} <br />
+                  </span>
+                  {date.getDate()}
+                </div>
+                <span>Cегодня</span>
                 <p>
-                  У вас
-                  {this.state.time} | Групповое событие <br />
-                  {this.state.event}
-                </p>{" "}
+                  {" "}
+                  День рождения у сотрудников: <b>Александров Александр</b>{" "}
+                  <br /> и <b> Фёдоров Георгий</b>
+                </p>
               </div>
             }
             slideSecond={
@@ -49,13 +55,12 @@ export default class Calendar extends React.Component {
                   <span className="month">
                     {month[date.getMonth()].slice(0, 3)} <br />
                   </span>
-                  {date.getDate()}
+                  {date.getDate() + 1}
                 </div>
-                <p>Cегодня</p>
+                <p>Завтра</p>
                 <p>
-                  День рождения у сотрудников: <b>Александров Александр</b> и{" "}
-                  <b>Фёдоров Георгий</b>
-                  <br />
+                  {time} | Групповое событие <br />
+                  <b> {event}</b>
                 </p>
               </div>
             }

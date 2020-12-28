@@ -57,10 +57,13 @@
 .content {
   .text {
     height: 200px;
-    width: 80%;
-    padding: 10px;
-    text-align: center;
-    
+    padding: 70px 0;
+
+    p {
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+    }
   }
   .text-agreement {
     .counter {
@@ -68,5 +71,4 @@
       background-color: rgba(39, 174, 96, 0.1);
     }
   }
-  
 }
