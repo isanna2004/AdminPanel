@@ -3,16 +3,14 @@ nav {
   flex-direction: column;
   position: absolute;
   left: 15%;
-
   justify-content: center;
-
   padding: 20px;
   color: #1d1c1d;
   ul {
     padding: 0;
   }
   li {
-    color:  #1D1C1D;
+    color: #1d1c1d;
     cursor: pointer;
     list-style-type: none;
     width: 190px;
@@ -24,7 +22,6 @@ nav {
     font-weight: 500;
     font-size: 14px;
     .eva {
-     
       margin-right: 10px;
     }
     &:hover {
@@ -32,7 +29,7 @@ nav {
       border-radius: 8px;
       color: white;
       .eva {
-        fill: "#fff";
+        fill: #fff;
       }
 
       &::after {

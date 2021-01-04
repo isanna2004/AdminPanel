@@ -1,18 +1,15 @@
 .Grid {
   display: grid;
   padding: 20px;
-
   position: absolute;
   left: 30%;
-
   grid-template-areas:
     "employeers employeers employeers"
     "requests calendar base"
     "waterfall-news waterfall-news  notificate";
   grid-template-columns: repeat(3, 2fr);
-grid-gap:1%
+  grid-gap: 1%;
 }
-
 
 #employeers {
   grid-area: employeers;
@@ -29,6 +26,6 @@ grid-gap:1%
 #waterfall-news {
   grid-area: waterfall-news;
 }
- #notificate{
-   grid-area: notificate;
- }
+#notificate {
+  grid-area: notificate;
+}

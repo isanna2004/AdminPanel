@@ -1,5 +1,5 @@
 import React from "react";
-
+import Icon from "react-eva-icons";
 import { KeyboardArrowDown } from "@material-ui/icons";
 import "./Header.scss";
 export default class Header extends React.Component {
@@ -8,20 +8,26 @@ export default class Header extends React.Component {
       <header className="header">
         <div className="logo">
           <img src="/images/Logo.png" alt="fanki" className="logo-img" />
-        </div>
+        </div >
         <hr className="line" />
-        <p className="info-window"> сообщений нет</p>
-        <hr className="line" />
-        <p className="admin-name">
-          <b> Александров Александр</b>
-          <br />
-          Frontend разработчик{" "}
+      <div className="admin-name">
+        <p className="info-window">
+          {" "}
+          <Icon name="bell-outline" size="large" fill=" #959595" /> Cообщений
+          нет
         </p>
-        <span>
-          <img src="/images/avatar.png" alt="avatar" className="avatar" />
-        </span>
-
-        <KeyboardArrowDown />
+        <hr className="line" />
+       
+          {" "}
+          <p>
+            <b> Александров Александр</b>
+            <p className="employee-position">Генеральный директор</p>
+          </p>
+          <span className="avatar">
+            <img src="/images/avatar.svg" alt="avatar" className="avatar" />
+          </span>
+          <KeyboardArrowDown />
+        </div>
       </header>
     );
   }

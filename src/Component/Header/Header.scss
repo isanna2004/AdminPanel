@@ -3,21 +3,33 @@
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  padding: 0 320px;
+  padding: 0 310px;
 
   span {
-    display: inline-block;
-    padding: 6px;
-    background-color: yellow;
-    border-radius: 50%;
-
     .avatar {
-      float: unset;
+  
       margin: 0 auto;
+      width: 40px;
     }
   }
   .admin-name {
-    margin: 0;
+    width: 500px;
+    display: flex;
+   
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .employee-position {
+      margin: 0;
+      text-align: right;
+      line-height: 17px;
+    }
+    p{
+       margin: 0;
+    }
+  }
+  .avatar {
+    margin: 0 20px;
   }
 }
 .line {
@@ -29,13 +41,16 @@
 
 .logo {
   padding: 0;
-  width: 670px;
+  width: 720px;
 }
+
 .info-window {
   border: 1px solid #dddddd;
   width: 172px;
-  padding: 10px 12px;
-  border-radius: 10px;
-  margin: 0 20px;
+  height: 36px;
+  padding: 7px 12px;
+  border-radius: 6px;
+margin-right: 20px;
   color: #959595;
+  background: #f8f8f8;
 }
