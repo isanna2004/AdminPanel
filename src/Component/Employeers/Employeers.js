@@ -4,12 +4,12 @@ import "./Employeers.scss";
 import Slider from "react-slick";
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 
-import data from "../Data/data.json";
+import data from "../data.json";
 
 export default function Employeers(props) {
   let [employeers, setEmployeers] = useState(data);
   let [employ, Setemploy] = useState();
-  let [person, setPerson] = useState();
+
   /**делим массив на одинаковые части для слайда */
   const splitArrayIntoChunks = (arr, len) => {
     var chunks = [],
@@ -53,7 +53,15 @@ export default function Employeers(props) {
 
   /**определяем активных сотрудников */
   const active = data.filter((elem) => elem.status === "активен");
-
+/**функция склонения слова */
+  const num_word = (value, words) => {
+    value = Math.abs(value) % 100;
+    var num = value % 10;
+    if (value > 10 && value < 20) return value + " " + words[2];
+    if (num > 1 && num < 5) return value + " " + words[1];
+    if (num == 1) return value + " " + words[0];
+    return value + " " + words[2];
+  };
   return (
     <section className="employeers" id={props.id}>
       <h3 className="title">
@@ -85,8 +93,7 @@ export default function Employeers(props) {
             Все
           </b>
           <span>
-            {data.length}
-            сотрудников
+            {num_word(data.length, ["сотрудник", "сотрудника", "сотрудников"])}
           </span>
         </p>
         {status.map((employeerStatus) => (
@@ -117,17 +124,17 @@ export default function Employeers(props) {
               {employeerStatus.title}
             </b>
             <span>
-              {
+              {num_word(
                 data.filter(
                   (elem) => elem.status === employeerStatus.title.toLowerCase()
-                ).length
-              }
-              сотрудников
+                ).length,
+                ["сотрудник", "сотрудника", "сотрудников"]
+              )}{" "}
             </span>
           </p>
         ))}
       </div>
-      {console.log(person)}
+
       <div className="employ">
         <Slider {...settings}>
           {slides.map((slide) => (
@@ -141,7 +148,8 @@ export default function Employeers(props) {
                     <p
                       className="date"
                       style={{
-                        background: employeer.status === "больничный"
+                        background:
+                          employeer.status === "больничный"
                             ? "rgba(255,15,0,0.1)"
                             : employeer.status === "отгул"
                             ? "rgba(242, 153, 74,0.1)"
@@ -161,7 +169,6 @@ export default function Employeers(props) {
                     >
                       {employeer.date}
                     </p>
-                   
                   </div>
                 ))}
               </div>

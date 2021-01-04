@@ -40,7 +40,7 @@ export default class Base extends React.Component {
           />
         </div>
 
-        <h4 className="title">База знаний →</h4>
+        <a className="title link">База знаний →</a>
       </div>
     );
   }

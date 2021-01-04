@@ -48,7 +48,7 @@ export default class Notificate extends React.Component {
             <p>Презентация IT-отдела, Улучшение мобильной платёжной системы.</p>
           </div>
         </div>{" "}
-        <h4 className="title">Уведомления →</h4>
+        <a className="title link">Уведомления →</a>
       </div>
     );
   }
