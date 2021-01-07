@@ -6,11 +6,46 @@ import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 
 import data from "../data.json";
 
+const defaultStatus = {
+  title: "Активен",
+  color: "rgb(45, 156, 219)",
+  background: "rgba(45, 156, 219,0.1)",
+  id: "",
+}
+
+const status = [
+  {
+    title: "В отпуске",
+    color: "rgb(45, 156, 219)",
+    background: "rgba(45, 156, 219,0.1)",
+    id: "vacation",
+  },
+  {
+    title: "отгул",
+    color: "rgb(242, 153, 74)",
+    background: "rgba(242, 153, 74,0.1)",
+    id: "onleave",
+  },
+  {
+    title: "Больничный",
+    color: "rgb(255, 15, 0",
+    background: "rgba(255, 15, 0, 0.1)",
+    id: "ill",
+  },
+];
+
+const getStatus = (id) => {
+  return status.find((s) => s.id === id) || defaultStatus
+}
+
 export default function Employeers(props) {
-  let [employeers, setEmployeers] = useState(data);
+  let [employeers, setEmployeers] = useState(data.map((empl) => ({...empl, status: getStatus(empl.status_id)})));
   let [statusFilter, SetstatusFilter] = useState();
   let [employeerStatus, SetemployeerStatus] = useState();
   let [title, SetTitle] = useState("");
+
+  console.log(employeers)
+
   /**делим массив на одинаковые части для слайда */
   const splitArrayIntoChunks = (arr, len) => {
     var chunks = [],
@@ -21,27 +56,10 @@ export default function Employeers(props) {
     }
     return chunks;
   };
-  const slides = splitArrayIntoChunks(employeers, 9);
-  const status = [
-    {
-      title: "В отпуске",
-      color: "rgb(45, 156, 219)",
-      background: "rgba(45, 156, 219,0.1)",
-      id: "vacation",
-    },
-    {
-      title: "отгул",
-      color: "rgb(242, 153, 74)",
-      background: "rgba(242, 153, 74,0.1)",
-      id: "onleave",
-    },
-    {
-      title: "Больничный",
-      color: "rgb(255, 15, 0",
-      background: "rgba(255, 15, 0, 0.1)",
-      id: "ill",
-    },
-  ];
+
+  const filteredEmpl = employeers.filter((elem) => !statusFilter || elem.status_id === statusFilter);
+
+  const slides = splitArrayIntoChunks(filteredEmpl, 9);
 
   /**настройки слайдера */
   const settings = {
@@ -82,11 +100,10 @@ export default function Employeers(props) {
           className="name-count"
           style={{
             background:
-              statusFilter === "all" ? "rgba(39, 174, 96,0.1)" : "#eeee",
+              statusFilter === "" ? "#cbffe1" : "#eee",
           }}
           onClick={() => {
-            setEmployeers((employeers = data));
-            SetstatusFilter((statusFilter = "all"));
+            SetstatusFilter('');
           }}
         >
           <b
@@ -104,12 +121,7 @@ export default function Employeers(props) {
             key={employeerStatus.id}
             className="name-count"
             onClick={() => {
-              SetstatusFilter((statusFilter = employeerStatus.id));
-              setEmployeers(
-                (employeers = data.filter(
-                  (elem) => elem.status === employeerStatus.title.toLowerCase()
-                ))
-              );
+              SetstatusFilter(employeerStatus.id);
             }}
             style={{
               background:
@@ -137,59 +149,32 @@ export default function Employeers(props) {
           </p>
         ))}
       </div>
-{}
+
       <div className="employ">
         <Slider {...settings}>
-          {slides.map((slide) => (
-            
-            <div>
+          {slides.map((slide) => {
+            return <div>
               <div className="employeer-list">
                 {slide.map((employeer) => (
                   <div className="list-item" key={employeer.id}>
                     <img className="avatar" src="/images/ava.png" />
                     <h5 className="employee-name">{employeer.name}</h5>
                     <p className="employee-position">{employeer.position}</p>
-                    
-                      <p
-                        className="date"
-                        style={{
-                          background: status.map((employeerFilter) =>
-                            // employeer.status ==
-                            // employeerFilter.title.toLowerCase()
-                            //   ? employeerFilter.background
-                            //   : "rgba(39, 174, 96,0.1)"
-                         console.log(employeer.status) )
-                        }}
-                      >
-                        {employeer.date}
-                      </p>
-{/* 
-                      /* {employeerStatus.map((s) => ( */}
-{/*                       
 
-                      //     ? "rgba(255,15,0,0.1)"
-                      //     : employeer.status === "отгул"
-                      //     ? "rgba(242, 153, 74,0.1)"
-                      //     : employeer.status === "в отпуске"
-                      //     ? "rgba(45, 156, 219,0.1)"
-                      //     : "rgba(39, 174, 96,0.1)",
+                    <p
+                      className="date"
+                      style={{
+                        backgroundColor: employeer.status.background
+                      }}
+                    >
+                      {employeer.date}
+                    </p>
 
-                      // color:
-                      //   employeer.status === "больничный"
-                      //     ? "rgba(255,15,0,1)"
-                      //     : employeer.status === "отгул"
-                      //     ? "rgba(242, 153, 74, 1)"
-                      //     : employeer.status === "в отпуске"
-                      //     ? "rgba(45, 156, 219,1)"
-                      //     : "rgba(39, 174, 96,1)",
-                      // }}
-                  */}
-                    
                   </div>
                 ))}
               </div>
             </div>
-          ))}
+          })}
         </Slider>
       </div>
     </section>
