@@ -41,10 +41,7 @@ const getStatus = (id) => {
 export default function Employeers(props) {
   let [employeers, setEmployeers] = useState(data.map((empl) => ({...empl, status: getStatus(empl.status_id)})));
   let [statusFilter, SetstatusFilter] = useState();
-  let [employeerStatus, SetemployeerStatus] = useState();
-  let [title, SetTitle] = useState("");
-
-  console.log(employeers)
+console.log(employeers)
 
   /**делим массив на одинаковые части для слайда */
   const splitArrayIntoChunks = (arr, len) => {
@@ -71,7 +68,7 @@ export default function Employeers(props) {
   };
 
   /**определяем активных сотрудников */
-  const active = data.filter((elem) => elem.status === "активен");
+  const active = data.filter((elem) => elem.status_id === "");
   /**функция склонения слова */
   const num_word = (value, words) => {
     value = Math.abs(value) % 100;
@@ -153,27 +150,28 @@ export default function Employeers(props) {
       <div className="employ">
         <Slider {...settings}>
           {slides.map((slide) => {
-            return <div>
-              <div className="employeer-list">
-                {slide.map((employeer) => (
-                  <div className="list-item" key={employeer.id}>
-                    <img className="avatar" src="/images/ava.png" />
-                    <h5 className="employee-name">{employeer.name}</h5>
-                    <p className="employee-position">{employeer.position}</p>
-
-                    <p
-                      className="date"
-                      style={{
-                        backgroundColor: employeer.status.background
-                      }}
-                    >
-                      {employeer.date}
-                    </p>
-
-                  </div>
-                ))}
+            return (
+              <div>
+                <div className="employeer-list">
+                  {slide.map((employeer) => (
+                    <div className="list-item" key={employeer.id}>
+                      <img className="avatar" src="/images/ava.png" />
+                      <h5 className="employee-name">{employeer.name}</h5>
+                      <p className="employee-position">{employeer.position}</p>
+                      {console.log(employeer.status)}
+                      <p
+                        className="date"
+                        style={{
+                          backgroundColor: employeer.status.background,
+                        }}
+                      >
+                        {employeer.date}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            );
           })}
         </Slider>
       </div>

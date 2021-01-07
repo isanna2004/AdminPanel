@@ -4,23 +4,25 @@
 }
 .news {
   text-align: left;
-  position: relative;
+
   margin-top: 22px;
 }
 .company {
-  border-top: 1px solid red;
+  
+  position: relative;
   border-bottom: none;
   background: #fef9ec;
   padding: 20px;
   line-height: 40px;
-}.news .employeer {
-  border: 1px solid #e5e5e5;}
+}
+.news .employeer {
+  border: 1px solid #e5e5e5;
+}
 .employeer {
   line-height: 40px;
-
 }
-.news .employeer{
-    padding: 20px;
+.news .employeer {
+  padding: 20px;
 }
 .employeer .tag {
   top: 95%;
@@ -30,14 +32,14 @@
 .tag {
   background: #ffffff;
   padding: 5px 23px;
-  border: 1px solid #ff4c00;
+
   box-sizing: border-box;
   border-radius: 4px;
   color: #ff4c00;
   font-size: 12px;
   line-height: 14px;
   position: absolute;
-  top: -5%;
+  top: -10%;
   left: 5%;
 }
 .company-avatar {

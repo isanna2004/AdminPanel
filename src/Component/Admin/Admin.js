@@ -18,7 +18,7 @@ export default function Admin() {
       <h3
         className="title"
         onClick={() => {
-          setShown((Shown = !Shown));
+          setShown(!Shown);
         }}
       >
         Администратор
@@ -27,9 +27,9 @@ export default function Admin() {
       <ul style={{ display: Shown ? "block" : "none" }}>
         {admin.map((title) => (
           <li>
-            {" "}
             <Icon name={title.link} size="large" fill=" #616061" />
             {title.title}
+       
           </li>
         ))}
       </ul>
