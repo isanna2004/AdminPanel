@@ -11,18 +11,18 @@ export default class Calendar extends React.Component {
   };
   render() {
     var month = [
-      "Январь",
-      "Февраль",
+      "Янв",
+      "Фев",
       "Март",
-      "Апрель",
+      "Апр",
       "Май",
       "Июнь",
       "Июль",
-      "Август",
-      "Сентябрь",
-      "Октябрь",
-      "Ноябрь",
-      "Декабрь",
+      "Авг",
+      "Сент",
+      "Окт",
+      "Нояб",
+      "Дек",
     ];
     const date = new Date();
     const { event, time, eventCount } = this.state;
@@ -37,11 +37,11 @@ export default class Calendar extends React.Component {
               <div className="text">
                 <div className="calendar-date">
                   <span className="month">
-                    {month[date.getMonth()].slice(0, 3)} <br />
+                    {month[date.getMonth()]} <br />
                   </span>
                   {date.getDate()}
                 </div>
-                <span>Cегодня</span>
+                <p>Cегодня</p>
                 <p>
                   {" "}
                   День рождения у сотрудников: <b>Александров Александр</b>{" "}
@@ -53,7 +53,7 @@ export default class Calendar extends React.Component {
               <div className="text">
                 <div className="calendar-date">
                   <span className="month">
-                    {month[date.getMonth()].slice(0, 3)} <br />
+                    {month[date.getMonth()]} <br />
                   </span>
                   {date.getDate() + 1}
                 </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Employeers.scss";
 
 import Slider from "react-slick";
@@ -8,8 +8,9 @@ import data from "../data.json";
 
 export default function Employeers(props) {
   let [employeers, setEmployeers] = useState(data);
-  let [employ, Setemploy] = useState();
-
+  let [statusFilter, SetstatusFilter] = useState();
+  let [employeerStatus, SetemployeerStatus] = useState();
+  let [title, SetTitle] = useState("");
   /**делим массив на одинаковые части для слайда */
   const splitArrayIntoChunks = (arr, len) => {
     var chunks = [],
@@ -53,7 +54,7 @@ export default function Employeers(props) {
 
   /**определяем активных сотрудников */
   const active = data.filter((elem) => elem.status === "активен");
-/**функция склонения слова */
+  /**функция склонения слова */
   const num_word = (value, words) => {
     value = Math.abs(value) % 100;
     var num = value % 10;
@@ -62,6 +63,7 @@ export default function Employeers(props) {
     if (num == 1) return value + " " + words[0];
     return value + " " + words[2];
   };
+
   return (
     <section className="employeers" id={props.id}>
       <h3 className="title">
@@ -79,11 +81,12 @@ export default function Employeers(props) {
         <p
           className="name-count"
           style={{
-            background: employ === "all" ? "rgba(39, 174, 96,0.1)" : "#eeee",
+            background:
+              statusFilter === "all" ? "rgba(39, 174, 96,0.1)" : "#eeee",
           }}
           onClick={() => {
             setEmployeers((employeers = data));
-            Setemploy((employ = "all"));
+            SetstatusFilter((statusFilter = "all"));
           }}
         >
           <b
@@ -101,7 +104,7 @@ export default function Employeers(props) {
             key={employeerStatus.id}
             className="name-count"
             onClick={() => {
-              Setemploy((employ = employeerStatus.id));
+              SetstatusFilter((statusFilter = employeerStatus.id));
               setEmployeers(
                 (employeers = data.filter(
                   (elem) => elem.status === employeerStatus.title.toLowerCase()
@@ -110,7 +113,7 @@ export default function Employeers(props) {
             }}
             style={{
               background:
-                employeerStatus.id === employ
+                employeerStatus.id === statusFilter
                   ? employeerStatus.background
                   : "#eeee",
             }}
@@ -134,10 +137,11 @@ export default function Employeers(props) {
           </p>
         ))}
       </div>
-
+{}
       <div className="employ">
         <Slider {...settings}>
           {slides.map((slide) => (
+            
             <div>
               <div className="employeer-list">
                 {slide.map((employeer) => (
@@ -145,30 +149,42 @@ export default function Employeers(props) {
                     <img className="avatar" src="/images/ava.png" />
                     <h5 className="employee-name">{employeer.name}</h5>
                     <p className="employee-position">{employeer.position}</p>
-                    <p
-                      className="date"
-                      style={{
-                        background:
-                          employeer.status === "больничный"
-                            ? "rgba(255,15,0,0.1)"
-                            : employeer.status === "отгул"
-                            ? "rgba(242, 153, 74,0.1)"
-                            : employeer.status === "в отпуске"
-                            ? "rgba(45, 156, 219,0.1)"
-                            : "rgba(39, 174, 96,0.1)",
+                    
+                      <p
+                        className="date"
+                        style={{
+                          background: status.map((employeerFilter) =>
+                            // employeer.status ==
+                            // employeerFilter.title.toLowerCase()
+                            //   ? employeerFilter.background
+                            //   : "rgba(39, 174, 96,0.1)"
+                         console.log(employeer.status) )
+                        }}
+                      >
+                        {employeer.date}
+                      </p>
+{/* 
+                      /* {employeerStatus.map((s) => ( */}
+{/*                       
 
-                        color:
-                          employeer.status === "больничный"
-                            ? "rgba(255,15,0,1)"
-                            : employeer.status === "отгул"
-                            ? "rgba(242, 153, 74, 1)"
-                            : employeer.status === "в отпуске"
-                            ? "rgba(45, 156, 219,1)"
-                            : "rgba(39, 174, 96,1)",
-                      }}
-                    >
-                      {employeer.date}
-                    </p>
+                      //     ? "rgba(255,15,0,0.1)"
+                      //     : employeer.status === "отгул"
+                      //     ? "rgba(242, 153, 74,0.1)"
+                      //     : employeer.status === "в отпуске"
+                      //     ? "rgba(45, 156, 219,0.1)"
+                      //     : "rgba(39, 174, 96,0.1)",
+
+                      // color:
+                      //   employeer.status === "больничный"
+                      //     ? "rgba(255,15,0,1)"
+                      //     : employeer.status === "отгул"
+                      //     ? "rgba(242, 153, 74, 1)"
+                      //     : employeer.status === "в отпуске"
+                      //     ? "rgba(45, 156, 219,1)"
+                      //     : "rgba(39, 174, 96,1)",
+                      // }}
+                  */}
+                    
                   </div>
                 ))}
               </div>
