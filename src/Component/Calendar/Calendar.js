@@ -41,7 +41,7 @@ export default class Calendar extends React.Component {
                   </span>
                   {date.getDate()}
                 </div>
-                <p>Cегодня</p>
+                <p className="data">Cегодня</p>
                 <p>
                   {" "}
                   День рождения у сотрудников: <b>Александров Александр</b>{" "}
@@ -57,7 +57,7 @@ export default class Calendar extends React.Component {
                   </span>
                   {date.getDate() + 1}
                 </div>
-                <p>Завтра</p>
+                <p className="data">Завтра</p>
                 <p>
                   {time} | Групповое событие <br />
                   <b> {event}</b>

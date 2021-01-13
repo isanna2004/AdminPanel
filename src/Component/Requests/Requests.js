@@ -3,9 +3,9 @@ import "./Requests.scss";
 import Slider from "../Slider/Slider";
 
 export default class Requests extends React.Component {
-  state={
-    status:""
-  }
+  state = {
+    status: "",
+  };
   render() {
     const status = [
       { title: "Согласован", color: "rgba(39, 174, 96, 0.5)" },
@@ -33,13 +33,25 @@ export default class Requests extends React.Component {
             }
             slideSecond={
               <div className="text">
-                <b className="text-agreement">Ваш запрос на больничный </b>
-                от 20 августа, 09:00 - 21 августа 18:00 <br/>
-                {
-                  <span className="counter" style={{ background: status[0].color }}>
-                    {status[0].title}
-                  </span>
-                }
+                <p>
+                  {" "}
+                  <b className="text-agreement">
+                    Ваш запрос на больничный{" "}
+                  </b>{" "}
+                  <br />
+                  <span className="data">
+                    от 20 августа, 09:00 - 21 августа 18:00
+                  </span>{" "}
+               
+                  {
+                    <span
+                      className="counter"
+                      style={{ background: status[0].color }}
+                    >
+                      {status[0].title}
+                    </span>
+                  }
+                </p>
               </div>
             }
           />

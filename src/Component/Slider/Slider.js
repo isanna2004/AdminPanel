@@ -16,7 +16,7 @@ export default class Sliders extends React.Component {
       
         <Slider {...settings}>
           {this.props.slideFirst}
-          {this.props.slideSecond}
+          {this.props.slideSecond || this.props.slideFirst}
         </Slider>
      
     );

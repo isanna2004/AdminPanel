@@ -11,9 +11,10 @@ export default class Base extends React.Component {
         </h4>
         <div className="content">
           <Slider
+            
             slideFirst={
               <div className="text">
-                <p>
+                <p className="data">
                   <img
                     src="/images/books.png"
                     alt="books"
@@ -24,19 +25,7 @@ export default class Base extends React.Component {
                 </p>
               </div>
             }
-            slideSecond={
-              <div className="text">
-                <p>
-                  <img
-                    src="/images/books.png"
-                    alt="books"
-                    style={{ margin: "0 auto" }}
-                  />
-                  <br />
-                  Новых публикаций нет
-                </p>
-              </div>
-            }
+       
           />
         </div>
 

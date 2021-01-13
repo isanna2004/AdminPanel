@@ -157,7 +157,7 @@ console.log(employeers)
                     <div className="list-item" key={employeer.id}>
                       <img className="avatar" src="/images/ava.png" />
                       <h5 className="employee-name">{employeer.name}</h5>
-                      <p className="employee-position">{employeer.position}</p>
+                      <p className="employee-position data">{employeer.position}</p>
                       {console.log(employeer.status)}
                       <p
                         className="date"

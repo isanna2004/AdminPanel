@@ -1,6 +1,6 @@
 import React from "react";
-import "./WaterfallNews.css";
-
+import "./WaterfallNews.scss";
+import Icon from "react-eva-icons";
 export default function WaterfallNews(props) {
   let date = new Date();
 
@@ -33,15 +33,14 @@ export default function WaterfallNews(props) {
             className="company"
             style={{
               background: person.background,
-              borderTop:
-                person.id === "company" ? "1px solid red" : "",
+              borderTop: person.id === "company" ? "1px solid red" : "",
               borderBottom: "1px solid #e5e5e5",
             }}
           >
             <span
               className="tag"
               style={{
-                top: person.id === "company" ? "-5%" : "90%",
+                top: person.id === "company" ? "-10%" : "90%",
                 border:
                   person.id === "company"
                     ? "1px solid #ff4c00"
@@ -54,14 +53,14 @@ export default function WaterfallNews(props) {
                 ? "сегодня"
                 : date.getDate() - person.date + "дней назад"}
             </span>
-            <p>
+            <p className="content">
               {" "}
               <img
                 src={person.avatar}
                 alt="company"
                 className="company-avatar"
               />
-              <b> {person.title} </b> <span>Сегодня, 10:55</span>
+              <b> {person.title} </b> <span className="data">Сегодня, 10:55</span>
             </p>
 
             <p
@@ -73,14 +72,17 @@ export default function WaterfallNews(props) {
           </div>
         ))}
       </div>
-      <div className="updates">
-        <img src="/images/updates.png" alt="updates" />
-        <h6>
-          {" "}
-          Здесь будет находится длинный очень длинный заголовокопубликованной
+      <div className="updates text">
+        <img src="/images/updates.png" alt="updates" /><br />
+ <span className="data">30 апреля 2020, 12:00</span>
+        <h4 className="title">
+         
+           {/* {this.props.title} */}
+          Здесь будет находится длинный очень длинный заголовок опубликованной
           новости в водопаде событий
-        </h6>
-        <p className="text">
+        </h4>
+        <p className="data">
+          {/* {this.props.text} */}
           Разнообразный и богатый опыт постоянный количественный рост и сфера
           нашей активности позволяет оценить значение позиций, занимаемых...{" "}
         </p>
@@ -88,11 +90,21 @@ export default function WaterfallNews(props) {
       <div className="button-group">
         <div>
           {" "}
-          <button className="btn">3</button>
-          <button className="btn">5</button>
-          <button className="btn">☺</button>
+          <button className="btn">
+            <img src="/images/Emote.png" /> 3
+          </button>
+          <button className="btn">
+            <img src="/images/Emote.png" /> 5
+          </button>
+          <button className="btn">
+            {" "}
+            <Icon name="message-circle-outline" size="medium" fill="#616061" />
+          </button>
         </div>
-        <button className="btn">18 комментариев</button>
+        <button className="btn comments">
+          <Icon name="message-circle-outline" size="medium" fill="#616061" />
+          18 комментариев
+        </button>
       </div>
     </div>
   );

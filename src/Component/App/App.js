@@ -10,14 +10,13 @@ import Requests from "../Requests/Requests";
 import Calendar from "../Calendar/Calendar";
 import WaterfallNews from "../WaterfallNews/WaterfallNews";
 function App() {
-
   return (
     <div className="App">
-      
-        <Header />
-     <nav>  <Navigation />
-     <Admin/>
-     </nav>
+      <Header />
+      <nav>
+        <Navigation />
+        <Admin />
+      </nav>
       <div className="Grid">
         <Employeers id="employeers" />
         <Requests id="requests" />

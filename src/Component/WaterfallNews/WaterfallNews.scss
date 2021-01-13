@@ -1,0 +1,82 @@
+.waterfall {
+  width: 660px;
+  height: auto;
+
+  .news {
+    text-align: left;
+    margin-top: 22px;
+  }
+  .company {
+    position: relative;
+    border-bottom: none;
+    background: #fef9ec;
+    padding: 20px;
+    line-height: 40px;
+    .text {
+      background: rgba(242, 201, 76, 0.2);
+      border-radius: 6px;
+      width: 70%;
+      line-height: 16.5px;
+      padding: 10px;
+      margin: 0 0 0 30px;
+    }
+    .tag {
+      background: #ffffff;
+      padding: 5px 23px;
+      box-sizing: border-box;
+      border-radius: 4px;
+      color: #ff4c00;
+      font-size: 12px;
+      line-height: 14px;
+      position: absolute;
+      top: -10%;
+      left: 5%;
+    }
+  }
+  .company-avatar {
+    float: left;
+    margin-right: 10px;
+  }
+  .updates {
+    padding: 20px 10px;
+    text-align: left;
+    .title {
+      text-transform: none;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 125%;
+      margin: 0;
+      color: #1d1c1d;
+      border:none;
+    }
+    
+  }
+  .button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .btn {
+      background: #f8f8f8;
+      border: 1px solid #dddddd;
+      border-radius: 50px;
+      margin-right: 10px;
+      padding: 3px;
+      font-size: 12px;
+      width: 50px;
+    }
+    .comments {
+      width: auto;
+      padding: 3px 12px;
+    }
+  }
+
+  .content {
+    margin: 0;
+  }
+  .data {
+    margin: 0;
+    padding: 0 12px;
+  }
+}

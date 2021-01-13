@@ -1,13 +1,19 @@
 .header {
+  background-color: white;
+  width: 100%;
+  // text-align: center;
+  // margin: 0 auto;
+}
+.header-content {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  background-color: white;
-  padding: 0 310px;
+  width: 68%;
 
+  margin: 0 auto;
   span {
     .avatar {
-  
       margin: 0 auto;
       width: 40px;
     }
@@ -15,42 +21,43 @@
   .admin-name {
     width: 500px;
     display: flex;
-   
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     .employee-position {
       margin: 0;
-      text-align: right;
       line-height: 17px;
     }
-    p{
-       margin: 0;
+    p {
+      margin: 0;
     }
   }
   .avatar {
     margin: 0 20px;
   }
-}
-.line {
-  width: 2px;
-  height: 56px;
-  margin: 0;
-  background-color: #dddddd;
-}
 
-.logo {
-  padding: 0;
-  width: 720px;
-}
+  .line {
+    width: 2px;
+    height: 56px;
+    margin: 0 5px;
+    background-color: #dddddd;
+  }
 
-.info-window {
-  border: 1px solid #dddddd;
-  width: 172px;
-  height: 36px;
-  padding: 7px 12px;
-  border-radius: 6px;
-margin-right: 20px;
-  color: #959595;
-  background: #f8f8f8;
+  .logo {
+    padding: 0;
+    width: 720px;
+    min-width: 300px;
+  }
+
+  .info-window {
+    border: 1px solid #dddddd;
+    min-width: 172px;
+    height: 36px;
+    padding: 7px 12px;
+    border-radius: 6px;
+    margin-right: 20px;
+    word-wrap: none;
+    color: #959595;
+    background: #f8f8f8;
+  }
 }
