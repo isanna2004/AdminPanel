@@ -11,7 +11,7 @@ const defaultStatus = {
   color: "rgb(45, 156, 219)",
   background: "rgba(45, 156, 219,0.1)",
   id: "",
-}
+};
 
 const status = [
   {
@@ -35,13 +35,15 @@ const status = [
 ];
 
 const getStatus = (id) => {
-  return status.find((s) => s.id === id) || defaultStatus
-}
+  return status.find((s) => s.id === id) || defaultStatus;
+};
 
 export default function Employeers(props) {
-  let [employeers, setEmployeers] = useState(data.map((empl) => ({...empl, status: getStatus(empl.status_id)})));
+  let [employeers, setEmployeers] = useState(
+    data.map((empl) => ({ ...empl, status: getStatus(empl.status_id) }))
+  );
   let [statusFilter, SetstatusFilter] = useState();
-console.log(employeers)
+  console.log(employeers);
 
   /**делим массив на одинаковые части для слайда */
   const splitArrayIntoChunks = (arr, len) => {
@@ -54,7 +56,9 @@ console.log(employeers)
     return chunks;
   };
 
-  const filteredEmpl = employeers.filter((elem) => !statusFilter || elem.status_id === statusFilter);
+  const filteredEmpl = employeers.filter(
+    (elem) => !statusFilter || elem.status_id === statusFilter
+  );
 
   const slides = splitArrayIntoChunks(filteredEmpl, 9);
 
@@ -81,26 +85,26 @@ console.log(employeers)
 
   return (
     <section className="employeers" id={props.id}>
-      <h3 className="title">
-        Отсутствующие сотрудники{" "}
-        <span className="counter">{data.length - active.length}</span>
-      </h3>
       <div className="employeers-header">
+        {" "}
+        <h3 className="title">
+          Отсутствующие сотрудники{" "}
+          <span className="counter">{data.length - active.length}</span>
+        </h3>
         <ul className="holders">
-          <li>Сегодня, 20 авг</li>
-          <li>Завтра, 21 авг</li>
-          <li>Неделя</li>
+          <li className="employee-name">Сегодня, 20 авг</li>
+          <li className="employee-name">Завтра, 21 авг</li>
+          <li className="employee-name">Неделя</li>
         </ul>
       </div>
-      <div className="employeers-name">
+      <div className="all-employeers">
         <p
           className="name-count"
           style={{
-            background:
-              statusFilter === "" ? "#cbffe1" : "#eee",
+            background: statusFilter === "" ? "#cbffe1" : "#eee",
           }}
           onClick={() => {
-            SetstatusFilter('');
+            SetstatusFilter("");
           }}
         >
           <b
@@ -157,7 +161,9 @@ console.log(employeers)
                     <div className="list-item" key={employeer.id}>
                       <img className="avatar" src="/images/ava.png" />
                       <h5 className="employee-name">{employeer.name}</h5>
-                      <p className="employee-position data">{employeer.position}</p>
+                      <p className="employee-position data">
+                        {employeer.position}
+                      </p>
                       {console.log(employeer.status)}
                       <p
                         className="date"

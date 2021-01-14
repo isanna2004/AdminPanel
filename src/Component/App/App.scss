@@ -6,13 +6,15 @@
   grid-template-areas:
     "employeers employeers employeers"
     "requests calendar base"
-    "waterfall-news waterfall-news  notificate";
-  grid-template-columns: repeat(3, 2fr);
+    "waterfall-news waterfall-news notificate";
+  
+  grid-template:auto;
   grid-gap: 1%;
 }
 
 #employeers {
   grid-area: employeers;
+  order:1;
 }
 #calendar {
   grid-area: calendar;
