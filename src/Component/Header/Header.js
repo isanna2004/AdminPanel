@@ -18,10 +18,10 @@ export default class Header extends React.Component {
               Cообщений нет
             </p>
             <hr className="line" />{" "}
-            <p className="name">
-              <b> Александров Александр</b>
+            <div className="name">
+              <b>Александров Александр</b>
               <p className="employee-position">Генеральный директор</p>
-            </p>
+            </div>
             <span className="avatar">
               <img src="/images/avatar.svg" alt="avatar" className="avatar" />
             </span>

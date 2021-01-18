@@ -26,7 +26,7 @@ export default function Admin() {
       </h3>
       <ul style={{ display: Shown ? "block" : "none" }}>
         {admin.map((title) => (
-          <li>
+          <li key={title.title}>
             <Icon name={title.link} size="large" fill=" #616061" />
             {title.title}
        

@@ -1,60 +1,57 @@
 import React from "react";
 import "./Requests.scss";
-import Slider from "../Slider/Slider";
+import Slider from "react-slick";
+import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 
 export default class Requests extends React.Component {
-  state = {
-    status: "",
-  };
   render() {
     const status = [
-      { title: "Согласован", color: "rgba(39, 174, 96, 0.5)" },
-      { title: "Отклонен", color: "" },
-      { title: "На рассмотрении", color: "" },
-    ];
+      {
+        title: " 2 несогласованных запроса",
+        bgcolor: "#ff4c00",
+        name: " Петров Алексей и  Шишкин Егор",
+      },
 
+      {
+        title: " запрос на больничный",
+        data: "20 августа, 09:00 - 21 августа 18:00",
+        color: "rgba(39, 174, 96",
+        status: "Согласован",
+      },
+    ];
+    const settings = {
+      dots: true,
+      nextArrow: <ArrowForwardIos />,
+      prevArrow: <ArrowBackIos />,
+    };
     return (
       <div className="requests" id={this.props.id}>
         <h4 className="title">
-          Запросы <span className="counter"> 1</span>
+          Запросы <span className="counter">{status.length}</span>
         </h4>{" "}
         <div className="content">
-          <Slider
-            slideFirst={
-              <div className="text">
+          <Slider {...settings}>
+            {status.map((status) => (
+              <div className="text" key={status.title}>
                 <p>
-                  {" "}
-                  У вас
-                  <span className="counter">2 несогласованных запроса</span>
+                  {status.title.includes("запроса") ? "У вас " : "Ваш"}
+                  <b className="counter" style={{background:status.bgcolor|| "none",color:status.bgcolor?"white":"black"}}>{status.title}</b>
                   <br />
-                  от сотрудников: <b>Петров Алексей</b> и <b> Шишкин Егор</b>
+                  {status.data || "от сотрудников"}  <b> {status.name|| ""}</b>
+                  <br />
+                  <span
+                    className="counter"
+                    style={{
+                      background:status.status? `${status.color},0.2)`:"none",
+                      color: status.color,
+                    }}
+                  >
+                    {status.status || ""}
+                  </span>
                 </p>
               </div>
-            }
-            slideSecond={
-              <div className="text">
-                <p>
-                  {" "}
-                  <b className="text-agreement">
-                    Ваш запрос на больничный{" "}
-                  </b>{" "}
-                  <br />
-                  <span className="data">
-                    от 20 августа, 09:00 - 21 августа 18:00
-                  </span>{" "}
-               
-                  {
-                    <span
-                      className="counter"
-                      style={{ background: status[0].color }}
-                    >
-                      {status[0].title}
-                    </span>
-                  }
-                </p>
-              </div>
-            }
-          />
+            ))}
+          </Slider>
         </div>
         <a className="title link">Запросы →</a>
       </div>

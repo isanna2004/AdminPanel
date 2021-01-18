@@ -1,16 +1,31 @@
 import React from "react";
 import "./Calendar.scss";
-import Slider from "../Slider/Slider";
+import Slider from "react-slick";
+import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 
 export default class Calendar extends React.Component {
-  state = {
-    date: "",
-    eventCount: 3,
-    time: "10:00 - 11:00",
-    event: "Презентация мобильной системы",
-  };
   render() {
-    var month = [
+    const settings = {
+      dots: true,
+      nextArrow: <ArrowForwardIos />,
+      prevArrow: <ArrowBackIos />,
+    };
+    let date = new Date();
+    let name = ["Александров Александр", "Фёдоров Георгий"]; /** props.name*/
+    const Events = [
+      {
+        date: date.getDate(),
+        time: "10:00 - 11:00",
+        event: "Презентация мобильной системы",
+      },
+      {
+        date: date.getDate() + 1,
+        time: "10:00 - 11:00",
+        event: " День рождения у сотрудников:",
+        name: name.join(" и "),
+      },
+    ];
+    const Month = [
       "Янв",
       "Фев",
       "Март",
@@ -24,47 +39,32 @@ export default class Calendar extends React.Component {
       "Нояб",
       "Дек",
     ];
-    const date = new Date();
-    const { event, time, eventCount } = this.state;
+
     return (
       <div className="requests" id={this.props.id}>
         <h4 className="title">
-          Ближайшие события <span className="counter"> {eventCount}</span>
+          Ближайшие события <span className="counter"> {Events.length}</span>
         </h4>{" "}
         <div className="content">
-          <Slider
-            slideFirst={
-              <div className="text">
+          <Slider {...settings}>
+            {Events.map((event) => (
+              <div className="text" key={event.event}>
                 <div className="calendar-date">
                   <span className="month">
-                    {month[date.getMonth()]} <br />
+                    {Month[date.getMonth()]} <br />
                   </span>
-                  {date.getDate()}
+                  {event.date}
                 </div>
-                <p className="data">Cегодня</p>
+                <p className="data">
+                  {event.date === date.getDate() ? "Cегодня" : "Завтра"}
+                </p>
                 <p>
-                  {" "}
-                  День рождения у сотрудников: <b>Александров Александр</b>{" "}
-                  <br /> и <b> Фёдоров Георгий</b>
+                  {event.event} <br />
+                  <b>{event.name || ""}</b>{" "}
                 </p>
               </div>
-            }
-            slideSecond={
-              <div className="text">
-                <div className="calendar-date">
-                  <span className="month">
-                    {month[date.getMonth()]} <br />
-                  </span>
-                  {date.getDate() + 1}
-                </div>
-                <p className="data">Завтра</p>
-                <p>
-                  {time} | Групповое событие <br />
-                  <b> {event}</b>
-                </p>
-              </div>
-            }
-          />
+            ))}
+          </Slider>
         </div>
         <a className="title link">Запросы →</a>
       </div>

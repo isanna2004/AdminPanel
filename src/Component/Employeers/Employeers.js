@@ -153,13 +153,13 @@ export default function Employeers(props) {
 
       <div className="employ">
         <Slider {...settings}>
-          {slides.map((slide) => {
+          {slides.map((slide, id) => {
             return (
-              <div>
+              <div key={id}>
                 <div className="employeer-list">
-                  {slide.map((employeer) => (
-                    <div className="list-item" key={employeer.id}>
-                      <img className="avatar" src="/images/ava.png" />
+                  {slide.map((employeer, id) => (
+                    <div className="list-item" key={id}>
+                      <img className="avatar" src={employeer.avatar||"/images/ava.png"} />
                       <h5 className="employee-name">{employeer.name}</h5>
                       <p className="employee-position data">
                         {employeer.position}

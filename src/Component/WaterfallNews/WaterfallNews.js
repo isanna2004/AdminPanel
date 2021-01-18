@@ -7,7 +7,7 @@ export default function WaterfallNews(props) {
   const news = [
     {
       title: "Company Sample Name",
-      background: "rgba(242, 201, 76, 0.2);",
+      background: "rgba(242, 201, 76, 0.2)",
       text: "Текст объявления, который написан от лица компании.",
       avatar: "/images/frog.png",
       id: "company",
@@ -29,7 +29,7 @@ export default function WaterfallNews(props) {
       </h4>
       <div className="news">
         {news.map((person) => (
-          <div
+          <div key={person.id}
             className="company"
             style={{
               background: person.background,
