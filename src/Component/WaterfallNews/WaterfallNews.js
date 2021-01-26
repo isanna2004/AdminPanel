@@ -30,13 +30,12 @@ export default function WaterfallNews(props) {
       descr:
         " Разнообразный и богатый опыт постоянный количественный рост и сфера нашей активности позволяет оценить значение позиций, занимаемых...",
       avatar: "/images/avatar.png",
-      id: "employeer",
       date: date.getDate() - 1,
     },
   ];
 
   const elemComponents = {
-    message: function ({data}) {
+    message: function ({ data }) {
       return (
         <div
           key={data.id}
@@ -80,7 +79,7 @@ export default function WaterfallNews(props) {
     },
     news: function ({ data }) {
       return (
-        <div>
+        <div key={data.id}>
           {" "}
           <div className="updates text">
             <img src="/images/updates.png" alt="updates" />
@@ -132,7 +131,7 @@ export default function WaterfallNews(props) {
         {news.map((item) => {
           const ViewComponent =
             elemComponents[item.type] || elemComponents.default;
-          return <ViewComponent data={item} />;
+          return <ViewComponent data={item} key={item.id}/>;
         })}
       </div>
     </div>
