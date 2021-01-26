@@ -1,8 +1,9 @@
 .Grid {
   display: grid;
   padding: 20px;
-  position: absolute;
-  left: 30%;
+position: absolute;
+left:20%;
+ margin-left: 150px;
   grid-template-areas:
     "employeers employeers employeers"
     "requests calendar base"
@@ -11,7 +12,9 @@
   grid-template:auto;
   grid-gap: 1%;
 }
-
+main{
+  position: relative;
+}
 #employeers {
   grid-area: employeers;
   order:1;

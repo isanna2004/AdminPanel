@@ -4,17 +4,9 @@ import Icon from "react-eva-icons";
 import "./Navigation.scss";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@material-ui/icons";
 
-export default function Navigation() {
-  let [Shown, setShown] = useState(false);
-  const item = [
-    { title: "Главная", link: "copy-outline" },
-    { title: "Запросы", link: "flash-outline" },
-    { title: "Календарь", link: "calendar-outline" },
-    { title: "База знаний", link: "book-outline" },
-    { title: "Новости", link: "book-open-outline" },
-    { title: "Задачи", link: "checkmark-circle-outline" },
-    { title: "Чаты", link: "message-circle-outline" },
-  ];
+export default function Navigation(props) {
+  let [Shown, setShown] = useState(true);
+  let item = props.item;
   return (
     <div>
       <h3
@@ -23,7 +15,7 @@ export default function Navigation() {
           setShown(!Shown);
         }}
       >
-        Компания
+        {props.title}
         {Shown ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
       </h3>
 

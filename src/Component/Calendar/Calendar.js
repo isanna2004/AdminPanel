@@ -1,15 +1,10 @@
 import React from "react";
 import "./Calendar.scss";
 import Slider from "react-slick";
-import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
-
+import {slick_settings} from "../../utils/slider_settings";
 export default class Calendar extends React.Component {
   render() {
-    const settings = {
-      dots: true,
-      nextArrow: <ArrowForwardIos />,
-      prevArrow: <ArrowBackIos />,
-    };
+   
     let date = new Date();
     let name = ["Александров Александр", "Фёдоров Георгий"]; /** props.name*/
     const Events = [
@@ -46,7 +41,7 @@ export default class Calendar extends React.Component {
           Ближайшие события <span className="counter"> {Events.length}</span>
         </h4>{" "}
         <div className="content">
-          <Slider {...settings}>
+          <Slider {...slick_settings}>
             {Events.map((event) => (
               <div className="text" key={event.event}>
                 <div className="calendar-date">

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Employeers.scss";
-
 import Slider from "react-slick";
-import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
-
+import { slick_settings } from "../../utils/slider_settings";
 import data from "../data.json";
 
 const defaultStatus = {
@@ -61,15 +59,6 @@ export default function Employeers(props) {
   );
 
   const slides = splitArrayIntoChunks(filteredEmpl, 9);
-
-  /**настройки слайдера */
-  const settings = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <ArrowForwardIos />,
-    nextArrowDisabled: <ArrowForwardIos />,
-    prevArrow: <ArrowBackIos />,
-  };
 
   /**определяем активных сотрудников */
   const active = data.filter((elem) => elem.status_id === "");
@@ -152,14 +141,17 @@ export default function Employeers(props) {
       </div>
 
       <div className="employ">
-        <Slider {...settings}>
+        <Slider {...slick_settings}>
           {slides.map((slide, id) => {
             return (
               <div key={id}>
                 <div className="employeer-list">
                   {slide.map((employeer, id) => (
                     <div className="list-item" key={id}>
-                      <img className="avatar" src={employeer.avatar||"/images/ava.png"} />
+                      <img
+                        className="avatar"
+                        src={employeer.avatar || "/images/ava.png"}
+                      />
                       <h5 className="employee-name">{employeer.name}</h5>
                       <p className="employee-position data">
                         {employeer.position}

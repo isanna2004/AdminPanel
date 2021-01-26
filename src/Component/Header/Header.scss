@@ -1,16 +1,17 @@
-.header {
-  background-color: white;
-  width: 100%;
+header {
+  background: white;
+width: 100%;
+background-size: cover;
 .name{
-  font-size:14px
+  font-size:14px;
+  min-width: 200px;
 }
 
   .header-content {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     align-items: center;
-    width: 68%;
+    width: 65%;
     margin: 0 auto;
     span {
       .avatar {
@@ -19,13 +20,13 @@
       }
     }
     .admin-name {
-      width: 500px;
+      width: 550px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       .employee-position {
-        margin: 0;
+      margin-left:10px;
         line-height: 17px;
       }
       p {

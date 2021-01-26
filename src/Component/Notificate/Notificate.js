@@ -52,21 +52,16 @@ export default class Notificate extends React.Component {
           Уведомления <span className="counter"> 1</span>
         </h4>
         <div className="notification-content">
-          {notificate.map((task,id) => (
+          {notificate.map((task, id) => (
             <div className="task-list" key={id}>
-              {" "}
               <img className="avatar" src={task.avatar} />
               <h3 className="employee-name">
                 {" "}
                 {task.name} <span className="data">{task.time}</span>
               </h3>
-              <span
-                className="counter" 
-              >
-                {task.title}
-              </span>
+              <span className="counter">{task.title}</span>
               <p className="text">{task.text}</p>
-              <hr />
+              {id + 1 !== notificate.length && <hr />}
             </div>
           ))}
         </div>

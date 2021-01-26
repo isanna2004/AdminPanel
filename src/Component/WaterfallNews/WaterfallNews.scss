@@ -1,6 +1,7 @@
 .waterfall {
   width: 660px;
   height: auto;
+  padding-bottom: 37px;
 
   .news {
     text-align: left;
@@ -30,12 +31,12 @@
       line-height: 14px;
       position: absolute;
       top: -10%;
-      left: 5%;
     }
   }
   .company-avatar {
     float: left;
     margin-right: 10px;
+    width: 36px;
   }
   .updates {
     padding: 20px 10px;
@@ -48,14 +49,18 @@
       line-height: 125%;
       margin: 0;
       color: #1d1c1d;
-      border:none;
+      border: none;
     }
-    
+    img {
+      padding: 12px;
+    }
   }
   .button-group {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 22px 22px 22px;
+    border-bottom: 1px solid #dddddd;
 
     .btn {
       background: #f8f8f8;

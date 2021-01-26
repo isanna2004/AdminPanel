@@ -5,13 +5,15 @@ import "./Header.scss";
 export default class Header extends React.Component {
   render() {
     return (
-      <header className="header">
+      <header>
         <div className="header-content">
           <div className="logo">
             <img src="/images/Logo.png" alt="fanki" className="logo-img" />
           </div>
-     
-          <div className="admin-name">     <hr className="line" />
+
+          <div className="admin-name">
+            {" "}
+            <hr className="line" />
             <p className="info-window">
               {" "}
               <Icon name="bell-outline" size="large" fill=" #959595" />{" "}
@@ -20,7 +22,7 @@ export default class Header extends React.Component {
             <hr className="line" />{" "}
             <div className="name">
               <b>Александров Александр</b>
-              <p className="employee-position">Генеральный директор</p>
+              <p className="employee-position data">Генеральный директор</p>
             </div>
             <span className="avatar">
               <img src="/images/avatar.svg" alt="avatar" className="avatar" />
