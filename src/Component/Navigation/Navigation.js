@@ -22,8 +22,8 @@ export default function Navigation(props) {
       <ul style={{ display: Shown ? "block" : "none" }}>
         {item.map((title) => (
           <li key={title.title}>
-            <Icon name={title.link} size="large" fill="#616061" />
-            {title.title}
+            <p><Icon name={title.link} size="large" fill="#616061" />
+            {title.title}</p>
             <svg
               width="16"
               height="16"

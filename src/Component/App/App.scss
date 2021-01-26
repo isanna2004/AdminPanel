@@ -1,23 +1,23 @@
 .Grid {
   display: grid;
   padding: 20px;
-position: absolute;
-left:20%;
- margin-left: 150px;
+  position: absolute;
+  left: 20%;
+  margin-left: 180px;
   grid-template-areas:
     "employeers employeers employeers"
     "requests calendar base"
     "waterfall-news waterfall-news notificate";
-  
-  grid-template:auto;
+
+  grid-template: auto;
   grid-gap: 1%;
 }
-main{
+main {
   position: relative;
 }
 #employeers {
   grid-area: employeers;
-  order:1;
+  order: 1;
 }
 #calendar {
   grid-area: calendar;

@@ -6,26 +6,27 @@ nav {
   left: 15%;
   justify-content: center;
   padding: 20px;
-  color: #1d1c1d; 
+  color: #1d1c1d;
   ul {
     padding: 0;
-
   }
   li {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
     color: #1d1c1d;
     cursor: pointer;
     list-style-type: none;
-    height: 36px;
     line-height: 17px;
     margin: 10px auto;
-    padding: 6px 7px;
+    padding: 6px 3px;
     text-align: left;
     font-weight: 500;
     font-size: 14px;
+    p {
+      margin: 0;
+    }
     .eva {
       margin-right: 10px;
     }
@@ -41,8 +42,7 @@ nav {
       }
     }
     .mask {
-      position: absolute;
-      left: 80%;
+      margin-right: 9px;
       opacity: 0.5;
     }
   }
